@@ -1,0 +1,14 @@
+baseURL = 'http://example.org/'
+languageCode = 'en-us'
+title = 'Hugo Snap Test'
+enableGitInfo = true
+
+[frontmatter]
+lastmod = [':git']
+
+[[module.imports]]
+path = 'github.com/jmooring/hugo-content'
+
+[[module.imports.mounts]]
+source = 'content'
+target = 'content'

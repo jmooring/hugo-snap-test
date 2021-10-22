@@ -1,0 +1,12 @@
++++
+title = 'Pandoc'
+date = 2021-10-22T19:02:00-07:00
+draft = false
++++
+This is a superscript in Pandoc markdown:
+
+> `2^10^`
+
+This is how it renders:
+
+> 2^10^

@@ -1,0 +1,47 @@
+{
+  "name": "hugo-snap-test",
+  "version": "1.0.0",
+  "description": "A site to test the snap version of Hugo.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jmooring/hugo-snap-test.git"
+  },
+  "keywords": [
+    "hugo",
+    "snap"
+  ],
+  "author": "Joe Mooring",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jmooring/hugo-snap-test/issues"
+  },
+  "homepage": "https://github.com/jmooring/hugo-snap-test#readme",
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.1"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {
+        "cascade": true,
+        "add": true
+      }
+    }
+  },
+  "browserslist": [
+    ">= 0.5%",
+    "last 2 major versions",
+    "not dead",
+    "Chrome >= 60",
+    "Firefox >= 60",
+    "Firefox ESR",
+    "iOS >= 12",
+    "Safari >= 12",
+    "not Explorer <= 11"
+  ]
+}
