@@ -12,3 +12,6 @@ path = 'github.com/jmooring/hugo-content'
 [[module.imports.mounts]]
 source = 'content'
 target = 'content'
+
+[params]
+sass_transpiler = 'dartsass'  # dartsass or libsass
