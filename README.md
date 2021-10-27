@@ -22,6 +22,18 @@ npm install
 /snap/bin/hugo
 ```
 
+To test without triggering the Go error:
+
+```bash
+HUGO_MODULE_IMPORTS="" /snap/bin/hugo
+```
+
+To test without triggering the Go and Embedded Dart Sass errors:
+
+```bash
+HUGO_MODULE_IMPORTS="" HUGO_PARAMS_TRANSPILER="libsass" /snap/bin/hugo
+```
+
 ## Background
 
 Some Hugo features have one or more external dependencies. For example, to
