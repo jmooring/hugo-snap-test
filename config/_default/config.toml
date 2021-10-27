@@ -14,4 +14,4 @@ source = 'content'
 target = 'content'
 
 [params]
-sass_transpiler = 'dartsass'  # dartsass or libsass
+transpiler = 'dartsass'  # dartsass or libsass

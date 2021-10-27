@@ -7,8 +7,7 @@
 {{ $targetPath := printf "css/style.%s.css" $cacheBuster }}
 
 {{/* Transpile again with options. */}}
-{{ $transpiler := default "libsass" site.Params.sass_transpiler }}
-{{ $options := dict "targetPath" $targetPath "transpiler" $transpiler }}
+{{ $options := dict "targetPath" $targetPath "transpiler" site.Params.transpiler }}
 {{ $css := $scss | toCSS $options | resources.PostCSS | minify }}
 {{ $temp := $css | fingerprint "sha512" }}
 <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $temp.Data.Integrity }}" crossorigin="anonymous">
