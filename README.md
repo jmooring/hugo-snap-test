@@ -131,6 +131,7 @@ dart-sass-embedded --version
 sudo add-apt-repository ppa:git-core/ppa
 sudo apt install git
 git --version
+git config --global core.quotepath off
 git config --global init.defaultBranch "main"
 git config --global user.email "you@example.com"
 git config --global user.name "Your Name"
@@ -141,8 +142,10 @@ git config --global user.name "Your Name"
 Add this section to $HOME/.bashrc:
 
 ```text
-# Set PATH to include the GOPATH/bin directory if Go is installed.
-gobin=$(go env GOPATH 2>/dev/null)/bin && PATH="$PATH:$gobin"
+# Set PATH to include $HOME/go/bin if it exists.
+if [ -d "$HOME/go/bin" ]; then
+  PATH="$HOME/go/bin:$PATH"
+fi
 ```
 
 Install and verify:
@@ -154,8 +157,21 @@ go version
 
 ### Node.js
 
+Add this section to $HOME/.bashrc:
+
+```text
+# Set PATH to include $HOME/.npm-global/bin if it exists.
+if [ -d "$HOME/.npm-global/bin" ]; then
+  PATH="$HOME/.npm-global/bin:$PATH"
+fi
+```
+
+Install and verify:
+
 ```bash
 sudo snap install node --channel=16/stable --classic
+mkdir -p $HOME/.npm-global
+npm config set prefix $HOME/.npm-global
 node --version
 ```
 
@@ -173,9 +189,9 @@ pandoc --version
 Add this section to $HOME/.bashrc:
 
 ```text
-# Set PATH to include the $HOME/.local/bin directory if it exists.
+# Set PATH to include $HOME/.local/bin if it exists.
 if [ -d "$HOME/.local/bin" ];then
-  PATH="$PATH:$HOME/.local/bin"
+  PATH="$HOME/.local/bin:$PATH"
 fi
 ```
 
@@ -183,7 +199,7 @@ Install and verify:
 
 ```bash
 sudo apt install python3-pip
-pip install rst2html
+pip install docutils
 source "$HOME/.bashrc"
 rst2html.py --version
 ```
