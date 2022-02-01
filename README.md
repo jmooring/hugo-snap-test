@@ -116,12 +116,14 @@ asciidoctor --version
 ### Embedded Dart Sass
 
 ```bash
-wget -q https://github.com/sass/dart-sass-embedded/releases/download/1.0.0-beta.15/sass_embedded-1.0.0-beta.15-linux-x64.tar.gz
-tar -xvzf sass_embedded-1.0.0-beta.15-linux-x64.tar.gz
-sudo cp sass_embedded/dart-sass-embedded /usr/local/bin/
+base=https://github.com && temp=dart-sass-embedded.tar.gz
+path=$(curl -sL https://github.com/sass/dart-sass-embedded/releases/latest | grep "href.*linux-x64.tar.gz" | awk -F'"' '{print $2}')
+wget -qO $temp $base$path
+tar -xvzf $temp
+sudo mv sass_embedded/dart-sass-embedded /usr/local/bin/
 sudo chmod 755 /usr/local/bin/dart-sass-embedded
-rm sass_embedded-1.0.0-beta.15-linux-x64.tar.gz
-rm -rf sass_embedded/
+rm $temp
+rm -r sass_embedded/ 
 dart-sass-embedded --version
 ```
 
