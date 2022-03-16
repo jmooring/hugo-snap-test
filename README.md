@@ -153,7 +153,7 @@ fi
 Install and verify:
 
 ```bash
-sudo snap install --classic go
+sudo snap install go --channel=1.18/stable --classic
 go version
 ```
 
