@@ -15,3 +15,6 @@ target = 'content'
 
 [params]
 transpiler = 'dartsass'  # dartsass or libsass
+
+[security.exec]
+allow = ['^asciidoctor$', '^dart-sass-embedded$', '^go$', '^npx$', '^pandoc$', '^postcss$', '^rst2html$']
