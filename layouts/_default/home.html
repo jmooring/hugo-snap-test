@@ -3,16 +3,21 @@
   {{ .Content }}
 
   <h2>Content Formats</h2>
-    {{ range where site.RegularPages "Type" "tests" }}
+  {{ range where site.RegularPages "Type" "tests" }}
     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
     {{ .Content }}
   {{ end }}
 
   <h2>Content from Hugo Module</h2>
-    {{ range where site.RegularPages "Type" "articles" }}
+  {{ range where site.RegularPages "Type" "articles" }}
     <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
     {{ .Summary }}
   {{ end }}
 
+  <h2>Other</h2>
+  {{ range where site.RegularPages "Type" "other" }}
+    <h3><a href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+    {{ .Summary }}
+  {{ end }}
 
 {{ end }}

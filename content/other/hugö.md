@@ -2,6 +2,8 @@
 title = 'Hugö'
 date = 2023-07-22T17:44:39-07:00
 draft = false
+weight = 40
+summary = 'The purpose of this page is to test a content file with a path that contains bytes > 0x80.'
 +++
 
 The purpose of this page is to test a content file with a path that contains bytes > 0x80. See <https://github.com/gohugoio/hugo/issues/9810>.
